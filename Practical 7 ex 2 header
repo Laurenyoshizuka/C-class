@@ -1,0 +1,99 @@
+//
+//  ex2_header.h
+//  Practical 7
+//
+//  Created by Lauren Yoshizuka on 15/02/2021.
+//
+
+#ifndef ex2_header_h
+#define ex2_header_h
+
+#include <iostream>
+#include <array>
+using namespace std;
+
+namespace stackNamespace {
+
+template <typename T>
+
+class Stack{
+    
+private:
+    T *ptr;
+    int size;
+    int index_empty;
+    int index_top;
+    
+public:
+    Stack (){
+        ptr = new T[size];
+        this -> index_top = 0;
+        this -> size = 20;
+        this -> index_empty = 0;
+    }
+    Stack (T stack_array[], int size){
+        ptr = new T[size];
+        this -> index_top = index_top;
+        this -> size = size;
+        this -> index_empty = 0;
+    }
+    void push (T  element){
+        if (index_empty >= 0 && index_empty < size){
+            ptr[index_top++] = element;
+            index_empty++;
+        }
+       /* else{
+            ptr[index_empty] = element;
+            this -> index_empty += 1;
+            print();
+        } */
+    }
+    
+    void pop(){
+        if (index_empty>0){
+            --index_top;
+            --index_empty;
+        }
+    }
+    
+    bool isEmpty(){
+        if (this -> index_empty == 0) {return true;}
+        else{return false;}
+    }
+    
+    const T top () {
+        if (index_empty>0){
+            return ptr[index_top];
+        }
+            else{return ptr[0];}
+    }
+    
+    const void print() {
+        if (index_empty == 0)
+        {cout << "Stack is empty." << endl;}
+        else{
+            for (int i = index_empty-1; i>= 0; i--){
+                if (i==index_top-1)
+                    cout << " \element";
+                else
+                    cout << "\element\element";
+                cout << ptr[i] << endl;
+            }
+                
+            }
+            
+            
+           /* int index;
+            int display = this -> index_empty-1;
+            cout << "Stack: [";
+            for (index = 0; display > index; display--){
+                cout << *(ptr + display) << " ";}
+            cout << *(ptr + display);
+            cout << "]" << endl;
+            } */
+    }
+};
+
+}
+
+#endif /* ex2_header_h */
