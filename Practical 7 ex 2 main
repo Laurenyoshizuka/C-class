@@ -1,0 +1,36 @@
+//
+//  main.cpp
+//  ex2
+//
+//  Created by Lauren Yoshizuka on 15/02/2021.
+//
+
+#include <iostream>
+#include "ex2_header.h"
+using namespace std;
+using namespace stackNamespace;
+
+int main (){
+    
+    //Stack<int> ptr = Stack<int>(5);
+    int arr1[3] = {};
+    string arr2[3] = {};
+    Stack<int> stack1(arr1, 3);
+    Stack<string> stack2(arr2, 3);
+    stack1.print();
+    stack1.push(3);
+    stack2.push("l");
+    stack2.push("a");
+    stack2.push("u");
+    stack1.push(6);
+    stack1.push(9);
+    stack1.print();
+    stack2.print();
+    stack2.pop();
+    stack2.pop();
+    stack2.print();
+    stack2.pop();
+    stack2.print();
+    
+    return 0;
+}
